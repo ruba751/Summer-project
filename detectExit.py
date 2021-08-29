@@ -119,11 +119,8 @@ def mainyy():
     rectangle = makeRectangle(x, z)    # will look at the room from above concidering only X and Z values
     xNew,zNew = deleteWithinRectangleBorders(rectangle,x,z)
     
-    quarter, centerx, centery = findExitQuarterAccordingToDencity(xNew, zNew, mideanX, mideanZ)
-    degree = getExitAngleFromCenter(centerx, centery, midX, midZ)
-    return degree
-    
 
-    quarterIndex,centerX,centerZ = findExitQuarter(xNew,zNew,mideanZ,mideanX)
+
+    quarterIndex,centerX,centerZ = findExitQuarterAccordingToDencity(xNew,zNew,mideanZ,mideanX)
     angle = getExitAngleFromCenter(centerX, centerZ, mideanX, mideanZ)
     return x,y,z,mideanZ,mideanX,rectangle,xNew,zNew,quarterIndex,angle
