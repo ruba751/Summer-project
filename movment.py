@@ -36,7 +36,6 @@ def take_shoots():         # this function will activate orb slam and start reco
         angle+=20
     Drone.land()
     Drone.streamoff()
-    print("reconrding data finished")
     landing_yaw_degree = Drone.get_yaw()     # need this data inorder to ??????offset the starting angle - the drone doensn't land exactly where it tookoff
-    run_Orbslam.join()
+    run_Orbslam.join()                       # quarantee that orbslam is shut down
     return landing_yaw_degree 

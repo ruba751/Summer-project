@@ -9,14 +9,14 @@ def move(distAngle, x, y, z, mideanZ, mideanX, rectangle, xNew, zNew, quarterInd
 
     if(quarterIndex == 1):
         Drone.rotate_clockwise(angle-distAngle)
-    elif (quarterIndex == 2):
+    elif(quarterIndex == 2):
         Drone.rotate_clockwise(90-distAngle)
         Drone.rotate_clockwise(abs(angle))
-    elif (quarterIndex == 3):
+    elif(quarterIndex == 3):
         Drone.rotate_counter_clockwise(distAngle)
         Drone.rotate_counter_clockwise(90)
         Drone.rotate_counter_clockwise(angle)
-    elif (quarterIndex == 4):
+    elif(quarterIndex == 4):
         Drone.rotate_counter_clockwise(distAngle)
         Drone.rotate_counter_clockwise(90-angle)
 
