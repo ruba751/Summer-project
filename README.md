@@ -8,7 +8,7 @@
 # Reference
         I got help for doing this project from alpha quadratic team
         (Wajeeh Atrash, Saji Asii, Farouk kraeem)
-# instructions
+# Instructions
         Inorder to activate this project:
         1- you need to run main.py
         2- when orb slam finishes press "fly"
@@ -22,3 +22,7 @@
         calculate the midean point in that choosen quarter
         calculate the angle and distance to that point from the center
         fly the drone to that point 
+        
+ # X Z graph for the point cloud I recieved from the orb slam2        
+        ![WhatsApp Image 2021-08-31 at 18 26 37](https://user-images.githubusercontent.com/70092224/131531161-d9f96e8d-c41d-4246-b814-d739d3dd6e2a.jpeg)
+
