@@ -25,3 +25,7 @@
         
  # X Z graph for the point cloud I recieved from the orb slam2        
 https://user-images.githubusercontent.com/70092224/131532672-f031a495-ba00-475e-8f56-73796b09a2fd.jpeg
+
+
+ # X Z graph for the point cloud after proccessing
+ https://user-images.githubusercontent.com/70092224/131532788-deba1c69-c410-4f91-89ba-6ae4d26fc5f2.jpeg
