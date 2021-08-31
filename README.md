@@ -24,5 +24,4 @@
         fly the drone to that point 
         
  # X Z graph for the point cloud I recieved from the orb slam2        
-        ![WhatsApp Image 2021-08-31 at 18 26 37](https://user-images.githubusercontent.com/70092224/131531161-d9f96e8d-c41d-4246-b814-d739d3dd6e2a.jpeg)
-
+https://user-images.githubusercontent.com/70092224/131532672-f031a495-ba00-475e-8f56-73796b09a2fd.jpeg
