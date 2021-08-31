@@ -29,3 +29,6 @@ https://user-images.githubusercontent.com/70092224/131532672-f031a495-ba00-475e-
 
  # X Z graph for the point cloud after proccessing
  https://user-images.githubusercontent.com/70092224/131532788-deba1c69-c410-4f91-89ba-6ae4d26fc5f2.jpeg
+ 
+ # demonstrating video
+ https://user-images.githubusercontent.com/70092224/131534112-10ac243f-afb0-40d9-bda1-48273a38827d.mp4
