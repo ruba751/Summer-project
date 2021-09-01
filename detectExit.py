@@ -1,8 +1,10 @@
-from math import sqrt, atan2, pi
+from math import sqrt, atan2, pi,atan
 from xml.etree.ElementTree import PI
 
 import numpy as np
-from movment import Drone
+from movment import  Drone
+import math
+
 
 def makeRectangle(x,z):
     numOfPoints=len(x)
@@ -12,7 +14,7 @@ def makeRectangle(x,z):
 
     recDimentions = 0;
     for i in range(numOfPoints):
-        recDimentions+=sqrt((x[i]-mideanX)**2+z[i]-mideanZ**2)   #some algebra: distance between two points
+        recDimentions+=sqrt((x[i]-mideanX)**2+(z[i]-mideanZ)**2)   #some algebra: distance between two points
 #     ************************2????????
     recDimentions=recDimentions/numOfPoints
     recDimentions*=2
@@ -29,7 +31,7 @@ def deleteWithinRectangleBorders(rectangle,x,z):
         if(checkInsideRect(rectangle,x[i],z[i])!=1):
             Xs.append(x[i])
             Zs.append(z[i])
-   
+
     return Xs, Zs
 
 def checkInsideRect(rectangle,x,z):    #for each point we will check if it is located inside the rectangle or not
@@ -57,22 +59,22 @@ def checkInsideRect(rectangle,x,z):    #for each point we will check if it is lo
 
 def findExitQuarterAccordingToDencity(x,z,mideanZ,mideanX):
     #need to calculate which quarter has the max dencity  after we done the cleaning inside the rectangle
-   
+
     # d = dencity
     d1 = 0
     d2 = 0
     d3 = 0
     d4 = 0
-   
+
     sum1x = 0
     sum1z = 0
-    
+
     sum2x = 0
     sum2z = 0
-    
+
     sum3x = 0
     sum3z = 0
-    
+
     sum4x = 0
     sum4z = 0
    
@@ -95,18 +97,18 @@ def findExitQuarterAccordingToDencity(x,z,mideanZ,mideanX):
             sum4x+=x[i]
             sum4z+=z[i]
                     
-    max=max(d1,d2,d3,d4)
+    Max=max([d1,d2,d3,d4])
     if(max==d1):
         return 1,float(sum1x/d1),float(sum1z/d1)
     if(max==d2):
         return 2,float(sum2x/d2),float(sum2z/d2)
     if(max==d3):
         return 3,float(sum3x/d3),float(sum3z/d3)
-    if(max==d4):
+    else:
         return 4,float(sum4x/d4),float(sum4z/d4)
 
 def getExitAngleFromCenter(centerX, centerZ, mideanX, mideanZ):
-    return int(atan2(float(centerX), float(centerZ) )* 180 / pi)
+     return int(atan(float(centerZ)/float(centerX)  )* 180 / pi)
 
 
 def moveDrone():
