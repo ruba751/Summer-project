@@ -11,5 +11,6 @@ while x!='fly':
 print(land_deg)
 x, y, z, mideanZ, mideanX, rectangle, xNew, zNew, quarterIndex, angle = detectExit.mainyy()     #after getting the data we will manupilate the points-cleaning #points within the room ...
 print(quarterIndex)
+
 moveToExit.move(land_deg, x, y, z, mideanZ, mideanX, rectangle, xNew, zNew, quarterIndex, angle)
 

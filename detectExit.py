@@ -125,3 +125,4 @@ def mainyy():                 # this function will retrieve the point cloud and 
     quarterIndex,centerX,centerZ = findExitQuarterAccordingToDencity(xNew,zNew,mideanZ,mideanX)
     angle = getExitAngleFromCenter(centerX, centerZ, mideanX, mideanZ)
     return x,y,z,mideanZ,mideanX,rectangle,xNew,zNew,quarterIndex,angle
+

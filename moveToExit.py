@@ -20,5 +20,6 @@ def move(distAngle, x, y, z, mideanZ, mideanX, rectangle, xNew, zNew, quarterInd
         Drone.rotate_counter_clockwise(90+angle)
     elif(quarterIndex == 4):
         Drone.rotate_counter_clockwise(90+angle-8)     # a constant value - for errors
+
 # rotating the drone angle acordingly
     detectExit.moveDrone()
