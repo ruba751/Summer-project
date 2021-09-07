@@ -34,6 +34,7 @@ https://user-images.githubusercontent.com/70092224/131532672-f031a495-ba00-475e-
 
 
  # X Z graph for the point cloud after proccessing
+      middle red dot represents the center, second one represents the exit 
  https://user-images.githubusercontent.com/70092224/131532788-deba1c69-c410-4f91-89ba-6ae4d26fc5f2.jpeg
  
  # demonstrating video
