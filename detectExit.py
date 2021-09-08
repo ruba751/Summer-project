@@ -6,7 +6,7 @@ from movment import  Drone
 import math
 
 
-def makeRectangle(x,z):
+def makeRectangle(x,z):                                 # this functions will find the midean point of all points in the clous point, reterning an array containing the edges of the rectangle 
     numOfPoints=len(x)
     mideanX=(float)(sum(x)/numOfPoints)
     mideanZ=(float)(sum(z)/numOfPoints)
@@ -21,7 +21,7 @@ def makeRectangle(x,z):
     rect=[[mideanX-recDimentions,mideanZ+recDimentions],[mideanX+recDimentions,mideanZ+recDimentions],[mideanX+recDimentions,mideanZ-recDimentions],[mideanX-recDimentions,mideanZ-recDimentions]]
     return rect
 
-def deleteWithinRectangleBorders(rectangle,x,z):
+def deleteWithinRectangleBorders(rectangle,x,z):      # given a rectangle, we will ignore every point in the point cloud that is located within the borders of this rectangle 
     Xs=[]
     Zs=[]
     numOfPoints = len(x)
@@ -34,19 +34,19 @@ def deleteWithinRectangleBorders(rectangle,x,z):
 
     return Xs, Zs
 
-def checkInsideRect(rectangle,x,z):    #for each point we will check if it is located inside the rectangle or not
+def checkInsideRect(rectangle,x,z):                  # help function, for each point we will check if it is located inside the rectangle or not
 #check if we recieved a rectangle from the form      _________                 _______
                                             #        |       |         or      \_______\
                                             #        ---------
-    upLeft = rectangle[0]
+    upLeft = rectangle[0]                   #          A                          B
     upRight = rectangle[1]
     downRight = rectangle[2]
     downLeft = rectangle[3]
-    if(downLeft[0]-upLeft[0]==0):
+    if(downLeft[0]-upLeft[0]==0):      # case A
         return (x > downLeft[0] and x < upRight[0] and z > downLeft[1] and z < upRight[1])
 
     #else will check the max and min slope that can fit into the rectangle
-    else:
+    else:                              # case B
         slope1 = float(downLeft[1] - upLeft[1]) / float(downLeft[0] - upLeft[0])
         slope2 = float(downLeft[1] - downRight[1]) / float(downLeft[0] - downRight[0])
         slope3 = float(upRight[1] - upLeft[1]) / float(upRight[0] - upLeft[0])
@@ -59,6 +59,7 @@ def checkInsideRect(rectangle,x,z):    #for each point we will check if it is lo
 
 def findExitQuarterAccordingToDencity(x,z,mideanZ,mideanX):
     #need to calculate which quarter has the max dencity  after we done the cleaning inside the rectangle
+    #why? we beileve that this rectangle after the cleaning will contain maximum number of points, because orbslam will detect points from outside the room(won't fit into the rectangle we created before
 
     # d = dencity
     d1 = 0
