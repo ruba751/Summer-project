@@ -6,7 +6,7 @@ from movment import  Drone
 import math
 
 
-def makeRectangle(x,z):                                 # this functions will find the midean point of all points in the clous point, reterning an array containing the edges of the rectangle 
+def makeRectangle(x,z):                                 # this functions will find the midean point of all points in the cloud point, reterning an array containing the edges of the rectangle 
     numOfPoints=len(x)
     mideanX=(float)(sum(x)/numOfPoints)
     mideanZ=(float)(sum(z)/numOfPoints)
@@ -98,7 +98,7 @@ def findExitQuarterAccordingToDencity(x,z,mideanZ,mideanX):
             sum4x+=x[i]
             sum4z+=z[i]
                     
-    Max=max([d1,d2,d3,d4])
+    Max=max([d1,d2,d3,d4])             # finding the most dence quarter and return it's meadian point
     if(max==d1):
         return 1,float(sum1x/d1),float(sum1z/d1)
     if(max==d2):
@@ -108,13 +108,14 @@ def findExitQuarterAccordingToDencity(x,z,mideanZ,mideanX):
     else:
         return 4,float(sum4x/d4),float(sum4z/d4)
 
-def getExitAngleFromCenter(centerX, centerZ, mideanX, mideanZ):
+def getExitAngleFromCenter(centerX, centerZ, mideanX, mideanZ):     #calculate the angle we should rotate the drone inorder to reach the quarter meadian 
      return int(atan(float(centerZ)/float(centerX)  )* 180 / pi)
 
 
 def moveDrone():
     Drone.move_forward(500)
     Drone.move_forward(200)
+    
 def mainyy():                 # this function will retrieve the point cloud and detect the exit of the room
     #also returns to main.py where to go _ in which degree to move
     x, y, z = np.loadtxt('/home/ruba/pointData.csv', unpack=True, delimiter=',')
